@@ -16,7 +16,7 @@ func main () {
         Addr: ":5241",
         Handler: r,
     }
-    xpprof.Register(r.NetHttpHandleFunc)
+    xpprof.RegisterHttp(r.NetHttpHandleFunc)
 	log.Print("http://localhost" + server.Addr + "/debug/")
 	log.Printf("%+v", server.ListenAndServe())
 }

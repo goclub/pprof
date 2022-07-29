@@ -5,7 +5,7 @@ import (
 	"net/http/pprof"
 )
 
-func Register(handleFunc func(path string, handler func(w http.ResponseWriter, r *http.Request))) {
+func RegisterHttp(handleFunc func(path string, handler func(w http.ResponseWriter, r *http.Request))) {
 	handleFunc("/debug/", pprof.Index)
 	handleFunc("/debug/cmdline", pprof.Cmdline)
 	handleFunc("/debug/profile", pprof.Profile)
